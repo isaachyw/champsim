@@ -1,0 +1,10 @@
+Trace,not the same,0,1,2,3
+cassandra,24903,2,2,27416,0
+drupal,32994,0,1,18636,0
+finagle-chirper,29381,0,0,33188,0
+finagle-http,26264,4,1,24109,0
+kafka,40670,19,2,38584,0
+mediawiki,56190,1,0,33050,0
+tomcat,78305,0,0,91733,0
+verilator,3017078,0,0,235,0
+wordpress,40256,0,9,11638,0

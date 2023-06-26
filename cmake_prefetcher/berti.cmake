@@ -1,0 +1,12 @@
+set(
+        MODULES
+        prefetcher_no_l1i
+        prefetcher_no_l1d
+        prefetcher_no_l2c
+        prefetcher_berti-concurso_llc
+        replacement_ship_llc
+        replacement_ship_l1d
+        replacement_ship_l2c
+        branch_tage-sc-l
+        btb_basic_btb
+)

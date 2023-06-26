@@ -1,0 +1,10 @@
+Trace,hwc hot & opt hot,hwc warm & opt hot,hwc warm & opt warm,hwc cold & opt hot,hwc cold & opt warm,hwc cold & opt cold,others
+cassandra,5593,22691,314,1522,25,3,39315
+drupal,3875,12588,1286,2071,340,6,41617
+finagle-chirper,7292,24308,288,1473,45,6,50253
+finagle-http,5735,20112,214,803,35,9,41592
+kafka,9109,32034,218,1385,48,8,65515
+mediawiki,6908,37578,1133,3968,228,6,62200
+tomcat,12277,65153,1462,2507,80,2,107765
+verilator,0,1055,723,3199,1426,0,3020637
+wordpress,2416,19200,1372,2240,213,0,35007

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -Eeuo pipefail
+set -x
+
+./config.sh champsim_pt_config.json
+make
+
+for file in $(ls ipc1_public); do
+  ./bin/champsim -warmup_instructions 50000000 -simulation_instructions 50000000 -traces ipc1_public/${file} > ipc1_result/${file}_result.txt
+done

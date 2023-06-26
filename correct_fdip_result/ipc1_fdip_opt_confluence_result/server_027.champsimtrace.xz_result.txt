@@ -1,0 +1,425 @@
+
+VirtualMemory physical capacity: 8589934592 num_ppages: 2097152
+VirtualMemory page size: 4096 log2_page_size: 12
+VirtualMemory initalizing ppage free list ... done
+VirtualMemory shuffling ppage free list ... done
+
+ (TOTAL 523355 bits 511 Kbits) 
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 50000000
+Simulation Instructions: 50000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs /home/isaachywong/champsim-pt/ipc1_public/server_027.champsimtrace.xz
+CPU 0 Tage branch predictor
+CPU 0 L1I FDIP
+Basic BTB sets: 2048 ways: 4 indirect buffer size: 4096 RAS size: 32
+Heartbeat CPU 0 instructions: 10000002 cycles: 2151298 heartbeat IPC: 4.64836 cumulative IPC: 4.64836 (Simulation time: 0 hr 5 min 30 sec) 
+Heartbeat CPU 0 instructions: 20000004 cycles: 4312603 heartbeat IPC: 4.62684 cumulative IPC: 4.63757 (Simulation time: 0 hr 10 min 53 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 30000001 cycles: 6464971 heartbeat IPC: 4.64604 cumulative IPC: 4.64039 (Simulation time: 0 hr 16 min 15 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 40000002 cycles: 8625790 heartbeat IPC: 4.62788 cumulative IPC: 4.63726 (Simulation time: 0 hr 21 min 39 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 50000000 cycles: 10778298 heartbeat IPC: 4.64574 cumulative IPC: 4.63895 (Simulation time: 0 hr 27 min 1 sec) 
+
+Warmup complete CPU 0 instructions: 50000005 cycles: 10778299 (Simulation time: 0 hr 27 min 1 sec) 
+
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 60000002 cycles: 17482698 heartbeat IPC: 1.49156 cumulative IPC: 1.49156 (Simulation time: 0 hr 33 min 25 sec) 
+Heartbeat CPU 0 instructions: 70000002 cycles: 24177540 heartbeat IPC: 1.49369 cumulative IPC: 1.49262 (Simulation time: 0 hr 39 min 50 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 80000000 cycles: 30861183 heartbeat IPC: 1.49619 cumulative IPC: 1.49381 (Simulation time: 0 hr 46 min 11 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 90000001 cycles: 37625913 heartbeat IPC: 1.47826 cumulative IPC: 1.48989 (Simulation time: 0 hr 52 min 35 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 100000003 cycles: 44281809 heartbeat IPC: 1.50243 cumulative IPC: 1.49238 (Simulation time: 0 hr 58 min 54 sec) 
+Finished CPU 0 instructions: 50000003 cycles: 33503511 cumulative IPC: 1.49238 (Simulation time: 0 hr 58 min 54 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 1.49238 instructions: 50000003 cycles: 33503511
+L1D TOTAL     ACCESS:   13256763  HIT:   12238590  MISS:    1018173
+L1D LOAD      ACCESS:    6930245  HIT:    6198178  MISS:     732067
+L1D RFO       ACCESS:    6326518  HIT:    6040412  MISS:     286106
+L1D PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1D AVERAGE MISS LATENCY: 19.1889 cycles
+L1I TOTAL     ACCESS:   17770197  HIT:   14933107  MISS:    2837090
+L1I LOAD      ACCESS:    5423727  HIT:    4017056  MISS:    1406671
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:   12346470  HIT:   10916051  MISS:    1430419
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:   17887177  ISSUED:   17887174  USEFUL:    1367374  USELESS:      63078
+L1I AVERAGE MISS LATENCY: 8.77924 cycles
+L2C TOTAL     ACCESS:    4360507  HIT:    3860461  MISS:     500046
+L2C LOAD      ACCESS:    1306343  HIT:    1122199  MISS:     184144
+L2C RFO       ACCESS:     286059  HIT:     220102  MISS:      65957
+L2C PREFETCH  ACCESS:    2262800  HIT:    2019768  MISS:     243032
+L2C WRITEBACK ACCESS:     505305  HIT:     498392  MISS:       6913
+L2C PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:     110833  USELESS:     131791
+L2C AVERAGE MISS LATENCY: 28.6943 cycles
+LLC TOTAL     ACCESS:     596545  HIT:     573409  MISS:      23136
+LLC LOAD      ACCESS:     184128  HIT:     176137  MISS:       7991
+LLC RFO       ACCESS:      65951  HIT:      51585  MISS:      14366
+LLC PREFETCH  ACCESS:     243032  HIT:     242325  MISS:        707
+LLC WRITEBACK ACCESS:     103434  HIT:     103362  MISS:         72
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:        278  USELESS:       1394
+LLC AVERAGE MISS LATENCY: 193.898 cycles
+CPU 0 L1I FDIP final stats
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:       8592  ROW_BUFFER_MISS:      14464
+ DBUS_CONGESTED:      16615
+ WQ ROW_BUFFER_HIT:       1146  ROW_BUFFER_MISS:      11280  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 96.2134% MPKI: 6.9238 Average ROB Occupancy at Mispredict: 168.565
+Branch type MPKI
+BRANCH_DIRECT_JUMP: 0.19966
+BRANCH_INDIRECT: 0.43128
+BRANCH_CONDITIONAL: 5.20934
+BRANCH_DIRECT_CALL: 0.3735
+BRANCH_INDIRECT_CALL: 0.52334
+BRANCH_RETURN: 0.18668
+

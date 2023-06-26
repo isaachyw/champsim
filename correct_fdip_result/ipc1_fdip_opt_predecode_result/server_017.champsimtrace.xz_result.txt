@@ -1,0 +1,150 @@
+
+VirtualMemory physical capacity: 8589934592 num_ppages: 2097152
+VirtualMemory page size: 4096 log2_page_size: 12
+VirtualMemory initalizing ppage free list ... done
+VirtualMemory shuffling ppage free list ... done
+
+ (TOTAL 523355 bits 511 Kbits) 
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 50000000
+Simulation Instructions: 50000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs /home/isaachywong/champsim-pt/ipc1_public/server_017.champsimtrace.xz
+CPU 0 Tage branch predictor
+CPU 0 L1I FDIP
+Basic BTB sets: 2048 ways: 4 indirect buffer size: 4096 RAS size: 32
+Heartbeat CPU 0 instructions: 10000001 cycles: 2472934 heartbeat IPC: 4.04378 cumulative IPC: 4.04378 (Simulation time: 0 hr 7 min 37 sec) 
+Heartbeat CPU 0 instructions: 20000003 cycles: 4945263 heartbeat IPC: 4.04477 cumulative IPC: 4.04427 (Simulation time: 0 hr 15 min 10 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 30000004 cycles: 7414402 heartbeat IPC: 4.04999 cumulative IPC: 4.04618 (Simulation time: 0 hr 22 min 40 sec) 
+Heartbeat CPU 0 instructions: 40000003 cycles: 9887245 heartbeat IPC: 4.04393 cumulative IPC: 4.04562 (Simulation time: 0 hr 30 min 15 sec) 
+Heartbeat CPU 0 instructions: 50000002 cycles: 12357417 heartbeat IPC: 4.0483 cumulative IPC: 4.04615 (Simulation time: 0 hr 37 min 43 sec) 
+
+Warmup complete CPU 0 instructions: 50000002 cycles: 12357417 (Simulation time: 0 hr 37 min 43 sec) 
+
+Heartbeat CPU 0 instructions: 60000001 cycles: 35885291 heartbeat IPC: 0.425028 cumulative IPC: 0.425028 (Simulation time: 0 hr 57 min 52 sec) 
+Heartbeat CPU 0 instructions: 70000003 cycles: 59764988 heartbeat IPC: 0.418766 cumulative IPC: 0.421874 (Simulation time: 1 hr 18 min 20 sec) 
+Heartbeat CPU 0 instructions: 80000000 cycles: 83148049 heartbeat IPC: 0.42766 cumulative IPC: 0.423785 (Simulation time: 1 hr 38 min 22 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 90000004 cycles: 109021880 heartbeat IPC: 0.386491 cumulative IPC: 0.413803 (Simulation time: 1 hr 54 min 41 sec) 
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Error: cannot find the corresponding timestamp!
+Heartbeat CPU 0 instructions: 100000003 cycles: 133601912 heartbeat IPC: 0.406834 cumulative IPC: 0.41239 (Simulation time: 2 hr 12 min 58 sec) 
+Finished CPU 0 instructions: 50000001 cycles: 121244495 cumulative IPC: 0.41239 (Simulation time: 2 hr 12 min 58 sec) 
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.41239 instructions: 50000001 cycles: 121244495
+L1D TOTAL     ACCESS:   12836059  HIT:   11098042  MISS:    1738017
+L1D LOAD      ACCESS:    6774919  HIT:    5905337  MISS:     869582
+L1D RFO       ACCESS:    6061140  HIT:    5192705  MISS:     868435
+L1D PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1D AVERAGE MISS LATENCY: 232.71 cycles
+L1I TOTAL     ACCESS:   17325995  HIT:   15173061  MISS:    2152934
+L1I LOAD      ACCESS:    4462109  HIT:    3158664  MISS:    1303445
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:   12863886  HIT:   12014397  MISS:     849489
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:   17747848  ISSUED:   17742788  USEFUL:     848810  USELESS:        675
+L1I AVERAGE MISS LATENCY: 9.7605 cycles
+L2C TOTAL     ACCESS:    5001496  HIT:    3361949  MISS:    1639547
+L2C LOAD      ACCESS:    1663726  HIT:     958049  MISS:     705677
+L2C RFO       ACCESS:     868431  HIT:      23928  MISS:     844503
+L2C PREFETCH  ACCESS:    1358784  HIT:    1271490  MISS:      87294
+L2C WRITEBACK ACCESS:    1110555  HIT:    1108482  MISS:       2073
+L2C PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:      58230  USELESS:      29037
+L2C AVERAGE MISS LATENCY: 239.457 cycles
+LLC TOTAL     ACCESS:    2689980  HIT:    1474843  MISS:    1215137
+LLC LOAD      ACCESS:     705672  HIT:     215674  MISS:     489998
+LLC RFO       ACCESS:     844495  HIT:     132902  MISS:     711593
+LLC PREFETCH  ACCESS:      87294  HIT:      75185  MISS:      12109
+LLC WRITEBACK ACCESS:    1052519  HIT:    1051082  MISS:       1437
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:       7027  USELESS:       4831
+LLC AVERAGE MISS LATENCY: 296.139 cycles
+CPU 0 L1I FDIP final stats
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:     272977  ROW_BUFFER_MISS:     940500
+ DBUS_CONGESTED:    1115296
+ WQ ROW_BUFFER_HIT:     326422  ROW_BUFFER_MISS:     520328  FULL:          0
+
+ AVG_CONGESTED_CYCLE: 6
+
+CPU 0 Branch Prediction Accuracy: 96.8735% MPKI: 5.25968 Average ROB Occupancy at Mispredict: 251.685
+Branch type MPKI
+BRANCH_DIRECT_JUMP: 0.00232
+BRANCH_INDIRECT: 0.00382
+BRANCH_CONDITIONAL: 4.9135
+BRANCH_DIRECT_CALL: 0.00788
+BRANCH_INDIRECT_CALL: 0.00952
+BRANCH_RETURN: 0.32264
+

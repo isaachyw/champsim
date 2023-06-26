@@ -1,0 +1,31 @@
+
+VirtualMemory physical capacity: 8589934592 num_ppages: 2097152
+VirtualMemory page size: 4096 log2_page_size: 12
+VirtualMemory initalizing ppage free list ... done
+VirtualMemory shuffling ppage free list ... done
+
+ (TAGE 463917)  (LOOP 1248)  (SC 58190)  (TOTAL 523355 bits 511 Kbits)  (TOTAL 523355 bits 511 Kbits) 
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 50000000
+Simulation Instructions: 50000000
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 3200 MT/s
+
+CPU 0 runs /home/isaachywong/champsim-pt/ipc1_public/spec_gcc_001.champsimtrace.xz
+CPU 0 Tage branch predictor
+CPU 0 L1I FDIP
+Basic BTB sets: 2048 ways: 4 indirect buffer size: 4096 RAS size: 32
+Heartbeat CPU 0 instructions: 10000001 cycles: 2255587 heartbeat IPC: 4.43344 cumulative IPC: 4.43344 (Simulation time: 0 hr 4 min 14 sec) 
+Heartbeat CPU 0 instructions: 20000001 cycles: 4522521 heartbeat IPC: 4.41124 cumulative IPC: 4.42231 (Simulation time: 0 hr 8 min 11 sec) 
+Heartbeat CPU 0 instructions: 30000001 cycles: 6793947 heartbeat IPC: 4.40252 cumulative IPC: 4.4157 (Simulation time: 0 hr 12 min 3 sec) 
+Heartbeat CPU 0 instructions: 40000000 cycles: 9063224 heartbeat IPC: 4.40669 cumulative IPC: 4.41344 (Simulation time: 0 hr 16 min 31 sec) 
+Heartbeat CPU 0 instructions: 50000001 cycles: 11343382 heartbeat IPC: 4.38566 cumulative IPC: 4.40786 (Simulation time: 0 hr 21 min 13 sec) 
+
+Warmup complete CPU 0 instructions: 50000001 cycles: 11343382 (Simulation time: 0 hr 21 min 13 sec) 
+
+Heartbeat CPU 0 instructions: 60000000 cycles: 18701435 heartbeat IPC: 1.35906 cumulative IPC: 1.35906 (Simulation time: 0 hr 25 min 13 sec) 
+Heartbeat CPU 0 instructions: 70000004 cycles: 25660807 heartbeat IPC: 1.43691 cumulative IPC: 1.3969 (Simulation time: 0 hr 29 min 17 sec) 
+Caught signal: 2

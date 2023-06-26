@@ -1,0 +1,1 @@
+Trace,IPC,L1I Access,L1I Hit,L1I Miss,L1I MPKI,Branch MPKI,L1D Access,L1D Hit,L1D Miss,L1D MPKI,L2C MPKI,LLC MPKI,L1I Load Access,L1I Load Hit,L1I Load Miss,L1I Load MPKI,L1I Latency,L1D Latency,L2C Latency,LLC Latency

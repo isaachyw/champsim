@@ -1,0 +1,10 @@
+Trace,hwc opt choose same type,hwc opt choose different type,opt not evict hwc evict,opt evict hwc not evict
+cassandra,36063,1132,2120,30148
+drupal,37982,1432,2203,20166
+finagle-chirper,47006,1318,1929,33412
+finagle-http,38011,1919,1662,26908
+kafka,60039,2676,2800,42802
+mediawiki,58258,1542,2400,49821
+tomcat,99924,1235,6606,81481
+verilator,2994662,1011,24964,6403
+wordpress,30922,1854,2231,25441
