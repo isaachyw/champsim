@@ -23,8 +23,9 @@ extern uint64_t total_btb_entries; // 1K, 2K...
 #define BASIC_BTB_INDIRECT_SIZE 4096
 #define BASIC_BTB_RAS_SIZE 32
 #define BASIC_BTB_CALL_INSTR_SIZE_TRACKERS 1024
+#define RECORD_TIME_GAP 100000
 
-CoverageAccuracy coverage_accuracy;
+//CoverageAccuracy coverage_accuracy;
 StreamBuffer stream_buffer(32);
 
 struct BASIC_BTB_ENTRY {
@@ -55,7 +56,7 @@ private:
     uint64_t last_timestamp = 0;
 public:
     uint64_t timestamp = 0;
-
+    uint64_t timestamp_range= 2*RECORD_TIME_GAP;
     Opt(uint64_t total_sets, uint64_t total_ways) : total_sets(total_sets), total_ways(total_ways) {}
 
     void init(uint64_t sets, uint64_t ways) {
@@ -76,11 +77,15 @@ public:
     }
 
     void read_record(FILE *demand_record, uint64_t cpu, unordered_map<uint64_t, vector<pair<uint64_t, uint64_t>>> *twig_prefetch_match) {
-        uint64_t ip, counter;
+        uint64_t ip, counter=0;
         int type = 0;
-        while (true) {
+        bool end = false;
+        future_accesses[cpu].clear();
+        while (counter < timestamp_range) {
             if (generate_record) {
-                if (fscanf(demand_record, "%llu %llu", &ip, &counter) == EOF) break;
+                if (fscanf(demand_record, "%llu %llu", &ip, &counter) == EOF){
+                    end= true;
+                    break;}
                 type = 0;
             } else {
 //                if (fscanf(demand_record, "%llu %llu %d", &ip, &counter, &type) == EOF) break;
@@ -106,8 +111,11 @@ public:
             }
         }
         last_timestamp = counter;
-        cout << "The last timestamp: " << last_timestamp << endl;
-        rewind(demand_record);
+//        cout << "The last timestamp: " << last_timestamp << endl;
+        if(end)
+        {
+            rewind(demand_record);
+        }
     }
 
     uint64_t find_set_index(uint64_t ip) {
@@ -133,7 +141,7 @@ public:
             if (current_it == future_accesses[cpu][set][ip].end()) {
                 // There is no point caching the key
                 // cout << "Error: cannot find the corresponding timestamp!" << endl;
-                coverage_accuracy.get_reuse_distance(ip, time, true);
+//                coverage_accuracy.get_reuse_distance(ip, time, true);
                 return false;
             }
             // First, find the one among the current set will be prefetched furthest
@@ -162,7 +170,7 @@ public:
             if (prefetch_found) {
                 current_btb[cpu][set].erase(prefetch_candidate.second);
                 access_record.evict(prefetch_candidate.second, cpu);
-                coverage_accuracy.get_reuse_distance(prefetch_candidate.second, time, false);
+//                coverage_accuracy.get_reuse_distance(prefetch_candidate.second, time, false);
             } else {
                 // Find victim in future demand access
                 pair<uint64_t, uint64_t> candidate;
@@ -179,12 +187,12 @@ public:
                     }
                 }
                 if (candidate.second == ip) {
-                    coverage_accuracy.get_reuse_distance(ip, time, true);
+//                    coverage_accuracy.get_reuse_distance(ip, time, true);
                     return false;
                 } else {
                     current_btb[cpu][set].erase(candidate.second);
                     access_record.evict(candidate.second, cpu);
-                    coverage_accuracy.get_reuse_distance(candidate.second, time, false);
+//                    coverage_accuracy.get_reuse_distance(candidate.second, time, false);
                 }
             }
         }
@@ -279,7 +287,7 @@ void O3_CPU::initialize_btb() {
 
     open_btb_record("r", false);
 
-    coverage_accuracy.init(btb_record, BASIC_BTB_SETS, BASIC_BTB_WAYS);
+//    coverage_accuracy.init(btb_record, BASIC_BTB_SETS, BASIC_BTB_WAYS);
 
     basic_opt.init(BASIC_BTB_SETS, BASIC_BTB_WAYS);
 
@@ -338,6 +346,11 @@ std::pair<uint64_t, uint8_t> O3_CPU::btb_prediction(uint64_t ip, uint8_t branch_
     } else {
         // use BTB for all other branches + direct calls
         basic_opt.timestamp++;
+        if(basic_opt.timestamp%RECORD_TIME_GAP==0 and basic_opt.timestamp_range!=RECORD_TIME_GAP){
+            basic_opt.timestamp_range+=RECORD_TIME_GAP;
+            basic_opt.read_record(btb_record,cpu,twig_prefetch_match);
+            // std::cout<<basic_opt.timestamp_range<<std::endl;
+        }
         auto btb_entry = basic_opt.find_btb_entry(ip, cpu);
         if (btb_entry == nullptr) {
             // no prediction for this IP
@@ -446,5 +459,5 @@ void O3_CPU::btb_final_stats() {
 //    access_counter.print_final_stats(cpu);
 //    assert(access_record.btb_type == BTBType::NORMAL);
     access_record.print_final_stats(trace_name, cpu, twig_prefetch_match != nullptr);
-    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
+//    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 }

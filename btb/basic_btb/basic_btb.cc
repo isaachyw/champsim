@@ -318,4 +318,3 @@ void O3_CPU::btb_final_stats() {
     // coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 //    print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 }
-

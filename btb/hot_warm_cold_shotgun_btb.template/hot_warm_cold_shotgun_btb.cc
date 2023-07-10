@@ -931,4 +931,3 @@ void O3_CPU::prefetch_btb(uint64_t ip, uint64_t branch_target, uint8_t branch_ty
 void O3_CPU::btb_final_stats() {
 
 }
-

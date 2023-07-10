@@ -25,8 +25,8 @@ include_directories(inc)
 # link_directories(/home/isaachyw/xed/obj)
 # else ()
 # message("Platform: Windows")
-include_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-05-25-lin-x86-64/include)
-link_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-05-25-lin-x86-64/lib)
+include_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-03-01-lin-x86-64/include)
+link_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-03-01-lin-x86-64/lib)
 
 # endif ()
 find_package(XED QUIET)
@@ -121,8 +121,8 @@ foreach(CMAKE_CONFIG ${CMAKE_CONFIGS})
     include(${CMAKE_CONFIG})
     set(CONFIG_HEADER_DIR ${PROJECT_BINARY_DIR}/${CONFIG_NAME})
     configure_file(templates/champsim_constants.h ${CONFIG_HEADER_DIR}/champsim_constants.h @ONLY)
-    # print out the output file name
 
+    # print out the output file name
     foreach(CMAKE_TARGET ${CMAKE_TARGETS})
         get_filename_component(TARGET_NAME ${CMAKE_TARGET} NAME_WLE)
         set(EXECUTABLE_NAME ChampSim_${CONFIG_NAME}_${TARGET_NAME})
@@ -143,7 +143,6 @@ endforeach()
 
 add_executable(pt_trace_parser pt_trace_parser/main.cpp pt_trace_parser/trace_reader.h)
 target_link_libraries(pt_trace_parser ${Boost_LIBRARIES} xed z)
-
 
 file(GLOB_RECURSE PAGER_SOURCES CONFIGURE_DEPENDS ${CMAKE_CURRENT_LIST_DIR}/src/*.cc)
 add_library(redu ${PAGER_SOURCES})
