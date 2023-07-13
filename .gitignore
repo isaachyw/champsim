@@ -46,3 +46,6 @@ dpc3_traces
 build2/
 cache-build/
 delta-build/
+build/
+env/
+*__pycache__/

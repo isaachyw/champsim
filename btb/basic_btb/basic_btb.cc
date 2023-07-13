@@ -23,7 +23,7 @@ extern uint64_t total_btb_entries; // 1K, 2K...
 #define BASIC_BTB_RAS_SIZE 32
 #define BASIC_BTB_CALL_INSTR_SIZE_TRACKERS 1024
 
-// CoverageAccuracy coverage_accuracy;
+//CoverageAccuracy coverage_accuracy;
 uint64_t timestamp = 0;
 StreamBuffer stream_buffer(32);
 BranchBias branch_bias(false);
@@ -139,9 +139,9 @@ void O3_CPU::initialize_btb() {
               << " indirect buffer size: " << BASIC_BTB_INDIRECT_SIZE
               << " RAS size: " << BASIC_BTB_RAS_SIZE << std::endl;
 
-    // open_btb_record("r", false);
+//    open_btb_record("r", false);
 
-    // coverage_accuracy.init(btb_record, BASIC_BTB_SETS, BASIC_BTB_WAYS);
+//    coverage_accuracy.init(btb_record, BASIC_BTB_SETS, BASIC_BTB_WAYS);
 
     basic_btb.resize(NUM_CPUS, vector<vector<BASIC_BTB_ENTRY>>(BASIC_BTB_SETS, vector<BASIC_BTB_ENTRY>(BASIC_BTB_WAYS)));
 
@@ -248,8 +248,8 @@ void O3_CPU::update_btb(uint64_t ip, uint64_t branch_target, uint8_t taken,
                 uint64_t set = basic_btb_set_index(ip);
                 auto repl_entry = basic_btb_get_lru_entry(cpu, set);
 
-                // if (repl_entry->ip_tag != 0) // Truly evict something.
-                    // coverage_accuracy.get_reuse_distance(repl_entry->ip_tag, timestamp - 1, false);
+//                if (repl_entry->ip_tag != 0) // Truly evict something.
+//                    coverage_accuracy.get_reuse_distance(repl_entry->ip_tag, timestamp - 1, false);
 
                 repl_entry->ip_tag = ip;
                 repl_entry->target = branch_target;
@@ -286,7 +286,7 @@ void O3_CPU::prefetch_btb(uint64_t ip, uint64_t branch_target, uint8_t branch_ty
                     uint64_t set = basic_btb_set_index(ip);
                     auto repl_entry = basic_btb_get_lru_entry(cpu, set);
 
-                    // coverage_accuracy.get_reuse_distance(repl_entry->ip_tag, timestamp - 1, false);
+//                    coverage_accuracy.get_reuse_distance(repl_entry->ip_tag, timestamp - 1, false);
 
                     repl_entry->ip_tag = ip;
                     repl_entry->target = branch_target;
@@ -315,7 +315,7 @@ void O3_CPU::btb_final_stats() {
          << endl;
     branch_bias.print_final_stats(trace_name, cpu);
     reuse_distance.print_final_stats(trace_name, cpu);
-    // coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
+//    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 //    print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 }
 

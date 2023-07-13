@@ -12,6 +12,7 @@ from matplotlib import colors
 from matplotlib.ticker import PercentFormatter
 from tqdm import tqdm
 
+import pdb
 total_ways = 4
 
 pt_traces = [
@@ -167,6 +168,7 @@ def read_all_csv(
 ):
     # classify(False, None, output_csv)
     csv_list = []
+    print(input_dir)
     for file in sorted(input_dir.glob("*.csv")):
         if pt and file.name.split(".")[0] not in pt_traces:
             continue
@@ -230,7 +232,9 @@ def generate_csv(input_dir: Path, output_path: Path):
     type=pathlib.Path,
 )
 @click.option("--pt", default=False, type=bool)
-@click.option("--input-dirs", type=click.STRING)
+@click.option("--input-dirs", type=click.STRING,
+              default="hwc_opt_ChampSim_fdip_hwc_50_80_f_keep_curr_hotter4"
+              )
 def main(input_big_dir: Path, output_dir: Path, pt: bool, input_dirs: str):
     # TODO: modify the way to get input_dir!!!
     output_dir.mkdir(exist_ok=True)
@@ -242,6 +246,22 @@ def main(input_big_dir: Path, output_dir: Path, pt: bool, input_dirs: str):
             # and input_dir.name == "hwc_opt_ChampSim_fdip_hot_warm_cold_80_25_f_keep"
             and input_dir.name in input_dirs_arr
         ):
+            all_same_type_headers = [
+                "Trace", "not the same", "0", "1", "2", "3"]
+            all_same_type_name = (
+                str(input_dir.name) + "_all_same_type_pt.csv"
+                if pt
+                else str(input_dir.name) + "_all_same_type.csv"
+            )
+            print(all_same_type_name)
+            all_same_type_output_path = output_dir / all_same_type_name
+            read_all_csv(
+                input_dir,
+                all_same_type_output_path,
+                all_same_type_classify,
+                all_same_type_headers,
+                pt,
+            )
             # name = str(input_dir.name) + ".csv"
             # print(name)
             # output_path = output_dir / name
@@ -299,22 +319,6 @@ def main(input_big_dir: Path, output_dir: Path, pt: bool, input_dirs: str):
             #     hwc_evict_opt_not_type_headers,
             #     pt,
             # )
-
-            all_same_type_headers = ["Trace", "not the same", "0", "1", "2", "3"]
-            all_same_type_name = (
-                str(input_dir.name) + "_all_same_type_pt.csv"
-                if pt
-                else str(input_dir.name) + "_all_same_type.csv"
-            )
-            print(all_same_type_name)
-            all_same_type_output_path = output_dir / all_same_type_name
-            read_all_csv(
-                input_dir,
-                all_same_type_output_path,
-                all_same_type_classify,
-                all_same_type_headers,
-                pt,
-            )
 
     # output_path = output_dir / "hwc_80_25.csv"
     # generate_csv(input_dir, output_path)

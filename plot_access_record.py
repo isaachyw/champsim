@@ -101,7 +101,8 @@ def cal_hit_access_misclassify(
     all_hwc_type = []
     for a in all_hit_miss:
         all_hwc_type.append(
-            judge_hwc_type(float(a) / float(a + 1), hot_lower_bound, cold_upper_bound)
+            judge_hwc_type(float(a) / float(a + 1),
+                           hot_lower_bound, cold_upper_bound)
         )
     all_hwc_type_count = [
         all_hwc_type.count(HWCType.cold),
@@ -135,14 +136,17 @@ def plot_hit_access_misclassify(
             )
             if total_hwc_type == HWCType.warm:
                 all_warm_misclassify_hot.append(
-                    float(all_hwc_type_count[2]) / float(sum(all_hwc_type_count))
+                    float(all_hwc_type_count[2]) /
+                    float(sum(all_hwc_type_count))
                 )
                 all_warm_misclassify_cold.append(
-                    float(all_hwc_type_count[0]) / float(sum(all_hwc_type_count))
+                    float(all_hwc_type_count[0]) /
+                    float(sum(all_hwc_type_count))
                 )
             if total_hwc_type == HWCType.hot:
                 all_hot_misclassify_warm.append(
-                    float(all_hwc_type_count[1]) / float(sum(all_hwc_type_count))
+                    float(all_hwc_type_count[1]) /
+                    float(sum(all_hwc_type_count))
                 )
     plt.figure()
     plt.hist(x=all_warm_misclassify_hot, bins=100)
@@ -171,7 +175,8 @@ def cal_hit_access_variance(data: list):
             # miss
             if curr_hit != 0:
                 # end of last period
-                all_hit_access.append(float(curr_hit) / float(curr_hit + curr_miss))
+                all_hit_access.append(
+                    float(curr_hit) / float(curr_hit + curr_miss))
                 assert curr_miss != 0
                 curr_hit = 0
                 curr_miss = 0
@@ -295,25 +300,20 @@ def all_cdf(input_dir: Path):
         "/mnt/storage/isaachyw/champsim_pt/dynamic_execution_CDF_hit_all_pt.csv"
     )
     pt_traces = [
-        "cassandra",
-        "drupal",
-        "finagle-chirper",
-        "finagle-http",
-        "kafka",
-        "mediawiki",
-        "tomcat",
-        "verilator",
-        "wordpress",
+        "whiskey"
+
     ]
     with output_path.open(mode="w") as output_file:
         for input_path in sorted(input_dir.iterdir()):
-            if input_path.name.split(".")[0] not in pt_traces:
+            print(input_path.name.split(".")[0].split("_")[0])
+            if input_path.name.split(".")[0].split("_")[0] not in pt_traces:
                 continue
             dynamic_execution_cdf(input_path, cdf_list, output_file)
 
 
 def cal_correlation(input_path: Path, csv_output):
-    output_dir = Path("/mnt/storage/isaachyw/champsim_pt/access_record_corr.csv")
+    output_dir = Path(
+        "/mnt/storage/isaachyw/champsim_pt/access_record_corr.csv")
     filename = input_path.name
     trace = filename.split(".")[0]
     print(trace)
@@ -400,7 +400,8 @@ def plot_hit_miss_hist(input_path: Path, output_dir: Path):
 
 
 def main():
-    input_dir = Path("/mnt/storage/isaachyw/champsim_pt/opt_access_record/way4")
+    input_dir = Path(
+        "/mnt/storage/isaachyw/champsim_pt/opt_access_record/way4")
 
     # Warm but should be hot
     output_dir = Path(

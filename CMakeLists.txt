@@ -27,7 +27,6 @@ include_directories(inc)
 # message("Platform: Windows")
 include_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-05-25-lin-x86-64/include)
 link_directories(/mnt/storage/isaachyw/gdata-verify/artifacts/xed/kits/xed-install-base-2023-05-25-lin-x86-64/lib)
-
 # endif ()
 find_package(XED QUIET)
 
@@ -42,6 +41,7 @@ else()
 endif()
 
 set(BOOST_VERSION_REQUIRED "1.74.0")
+set(CMAKE_PREFIX_PATH "/usr/local/include/boost/" ${CMAKE_PREFIX_PATH})
 find_package(Boost ${BOOST_VERSION_REQUIRED} EXACT COMPONENTS system filesystem iostreams program_options REQUIRED)
 
 # find_package(Boost COMPONENTS system filesystem iostreams program_options REQUIRED)

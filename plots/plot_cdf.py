@@ -38,10 +38,10 @@ def generate_plot(input_path: Path, output_path: Path, ytitle: str):
 
 
 def main():
-    input_dir = Path("/Users/isaachywong/Desktop/plots/paper_results/CDF")
-    output_dir = input_dir
+    input_dir = Path("/mnt/storage/isaachyw/champsim_pt")
+    output_dir = input_dir/Path("CDF")
     generate_plot(
-        input_dir / "dynamic_execution_CDF_pt.csv",
+        input_dir / "dynamic_execution_CDF_hit_all_pt.csv",
         output_dir / "branch_index.pdf",
         "Unique taken branches",
     )

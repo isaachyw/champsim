@@ -5,6 +5,7 @@
 #ifndef CHAMPSIM_PT_ACCURACY_H
 #define CHAMPSIM_PT_ACCURACY_H
 
+#include "ooo_cpu.h"
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>

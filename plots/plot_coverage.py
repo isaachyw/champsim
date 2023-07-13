@@ -28,18 +28,19 @@ def cal_coverage(line: pd.Series) -> pd.Series:
 
 def main():
     # input_dir = Path("/mnt/storage/isaachyw/champsim_pt/hwc_opt_compare")
-    input_dir = Path("/home/isaachywong/Desktop/UM/SURE/plots/hwc_opt_compare")
+    input_dir = Path("/mnt/storage/isaachyw/champsim_pt/hwc_opt_compare")
     # output_dir = Path("/mnt/storage/isaachyw/champsim_pt/paper_results/coverage")
-    output_dir = Path("/home/isaachywong/Desktop/UM/SURE/plots/paper_results/coverage")
+    output_dir = Path(
+        "/mnt/storage/isaachyw/champsim_pt/paper_results/gdata-coverage")
     output_dir.mkdir(exist_ok=True)
     input_path = (
         input_dir
-        / "hwc_opt_ChampSim_fdip_hwc_50_80_f_keep_curr_hotter_lru4_all_same_type_pt.csv"
+        / "simplify.csv"
     )
     df = pd.read_csv(input_path, header=0, index_col=0)
-    print(df)
+    # print(df)
     df = df.apply(cal_coverage, axis=1)
-    print(df)
+    # print(df)
     print(df.mean())
     df.to_csv(output_dir / "coverage.csv")
 

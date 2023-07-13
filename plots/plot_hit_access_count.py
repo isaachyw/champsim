@@ -58,19 +58,23 @@ def old_plots():
     chosen_list = [
         # "cassandra",
         # "clang",
-        "drupal",
+        # "drupal",
         # "finagle-chirper",
         # "finagle-http",
-        "kafka",
+        # "kafka",
         # "mediawiki",
         # "mysqllarge",
         # "pgbench",
         # "python",
         # "tomcat",
-        "verilator",
+        # "verilator",
         # "wordpress",
+        "charlie",
+        "delta",
+        "merced",
+        "whiskey"
     ]
-    data_dir = Path("/home/isaachywong/Desktop/UM/SURE/plots/paper_results/CDF/")
+    data_dir = Path("/mnt/storage/isaachyw/champsim_pt/")
     hit_access_df = pd.read_csv(
         data_dir / "CDF_hit_access_pt.csv", header=0, index_col=0
     ).transpose()
@@ -111,9 +115,11 @@ def old_plots():
         plt.text(pos[i], height[i], words[i], ha="center")
 
     plt.tight_layout()
-    plt.savefig(output_filename(data_dir / "cdf_count.pdf"), bbox_inches='tight', pad_inches=0)
+    plt.savefig(output_filename(data_dir / "cdf_count.pdf"),
+                bbox_inches='tight', pad_inches=0)
 
-    df = branch_count_df.merge(hit_access_df, left_index=True, right_index=True)
+    df = branch_count_df.merge(
+        hit_access_df, left_index=True, right_index=True)
     # print(df)
     columns = hit_access_df.columns
     plt.figure(figsize=figaspect(0.4 / 0.9))
@@ -130,17 +136,16 @@ def old_plots():
     plt.xlabel(r"\% of all unique taken branches")
     plt.legend()
 
-    hot_ellipse = Ellipse((25, 90), 50, 25, angle=0, alpha=0.1)
+    hot_ellipse = Ellipse((25, 90), 50, 10, angle=0, alpha=0.1)
     ax.add_artist(hot_ellipse)
     hot_ellipse.set_facecolor("red")
-    warm_ellipse = Ellipse((62.5, 70), 45, 25, angle=-70, alpha=0.1)
+    warm_ellipse = Ellipse((62.5, 60), 45, 40, angle=-70, alpha=0.1)
     ax.add_artist(warm_ellipse)
     warm_ellipse.set_facecolor("orange")
-    cold_ellipse = Ellipse((85, 25), 35, 55, angle=0, alpha=0.1)
+    cold_ellipse = Ellipse((85, 25), 35, 45, angle=0, alpha=0.1)
     ax.add_artist(cold_ellipse)
     # cold_ellipse.set_facecolor("cold")
 
-    offsets = [0, 50, 75, 100]
     words = ["hot", "warm", "cold"]
     pos = [25, 62.5, 85]
     height = [90, 70, 25]
@@ -152,7 +157,8 @@ def old_plots():
 
     # print(hit_access_df)
     # print(branch_count_df)
-    plt.savefig(output_filename(data_dir / "hit_taken_count.pdf"), bbox_inches='tight', pad_inches=0)
+    plt.savefig(output_filename(data_dir / "hit_taken_count.pdf"),
+                bbox_inches='tight', pad_inches=0)
     plt.close()
 
 

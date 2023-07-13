@@ -910,6 +910,6 @@ void O3_CPU::btb_final_stats() {
          << " BTB miss rate: " << ((double) btb_miss_taken_branch_count) / ((double) predicted_taken_branch_count)
          << endl;
 //    hot_warm_cold_btb.print_final_stats(trace_name, program_name);
-//    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
+   coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 //    access_counter.print_final_stats(cpu);
 }
