@@ -62,6 +62,11 @@ bool taken_only = false;
 
 #define BTB_CURR_HOTTER @BTB_CURR_HOTTER@
 
+
+
+// whether use approx
+
+#define BTB_OPT_APPROX @BTB_OPT_APPROX@
 bool ignore_all_hot = BTB_IGNORE_ALL_HOT;
 
 bool sort_hit_access = BTB_SORT_HIT_ACCESS;
@@ -72,7 +77,7 @@ bool consider_keep = BTB_CONSIDER_KEEP;
 bool consider_taken_history = BTB_CONSIDER_TAKEN_HISTORY;
 
 bool curr_hotter = BTB_CURR_HOTTER;
-
+bool opt_approx= BTB_OPT_APPROX;
 //AccessCounter access_counter(BASIC_BTB_SETS, BASIC_BTB_WAYS);
 //CoverageAccuracy coverage_accuracy;
 StreamBuffer stream_buffer(32);
@@ -293,6 +298,9 @@ public:
         fs::path opt_access_record_path = with_twig ?
                                           "/mnt/storage/isaachyw/champsim_pt/opt_access_record_predecoder" :
                                           "/mnt/storage/isaachyw/champsim_pt/opt_access_record";
+        if(opt_approx){
+            opt_access_record_path = "/mnt/storage/isaachyw/champsim_pt/approx_opt_access_record";
+        }
         string sub_dir = "way" + std::to_string(train_total_btb_ways);
         if (train_total_btb_entries != 8 && train_total_btb_entries != 8192) {
             if (train_total_btb_entries % 1024 == 0) {
@@ -910,6 +918,6 @@ void O3_CPU::btb_final_stats() {
          << " BTB miss rate: " << ((double) btb_miss_taken_branch_count) / ((double) predicted_taken_branch_count)
          << endl;
 //    hot_warm_cold_btb.print_final_stats(trace_name, program_name);
-   coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
+//   coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 //    access_counter.print_final_stats(cpu);
 }

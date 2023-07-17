@@ -445,6 +445,6 @@ void O3_CPU::btb_final_stats() {
          << endl;
 //    access_counter.print_final_stats(cpu);
 //    assert(access_record.btb_type == BTBType::NORMAL);
-    access_record.print_final_stats(trace_name, cpu, twig_prefetch_match != nullptr);
+    access_record.print_final_stats(trace_name, cpu, twig_prefetch_match != nullptr, false);
 //    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 }

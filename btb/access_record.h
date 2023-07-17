@@ -104,12 +104,14 @@ public:
         it->second.record.push_back(RecordType::EVICT);
     }
 
-    void print_final_stats(string &trace_name, uint64_t cpu, bool with_twig = false) {
+    void print_final_stats(string &trace_name, uint64_t cpu, bool with_twig = false,bool is_approx= false) {
         auto short_name = O3_CPU::find_trace_short_name(trace_name, O3_CPU::NameKind::TRAIN);
         if (with_twig) {
             short_name = "twig_" + short_name;
         }
-        fs::path opt_access_record_path = ("/mnt/storage/isaachyw/champsim_pt/opt_access_record" + btb_type_to_suffix(btb_type));
+        fs::path opt_access_record_path = is_approx? ("/mnt/storage/isaachyw/champsim_pt/approx_opt_access_record" + btb_type_to_suffix(btb_type))
+                : ("/mnt/storage/isaachyw/champsim_pt/opt_access_record" + btb_type_to_suffix(btb_type))
+                ;
         fs::create_directory(opt_access_record_path);
         string sub_dir = "way" + std::to_string(total_btb_ways);
         if (total_btb_entries != 8 && total_btb_entries != 8192) {

@@ -23,7 +23,7 @@ extern uint64_t total_btb_entries; // 1K, 2K...
 #define BASIC_BTB_INDIRECT_SIZE 4096
 #define BASIC_BTB_RAS_SIZE 32
 #define BASIC_BTB_CALL_INSTR_SIZE_TRACKERS 1024
-#define RECORD_TIME_GAP 100000
+#define RECORD_TIME_GAP @RECORD_TIME_GAP@
 
 //CoverageAccuracy coverage_accuracy;
 StreamBuffer stream_buffer(32);
@@ -172,6 +172,7 @@ public:
             if (prefetch_found) {
                 current_btb[cpu][set].erase(prefetch_candidate.second);
                 access_record.evict(prefetch_candidate.second, cpu);
+//                assert(false); just to confirm never prefetch
 //                coverage_accuracy.get_reuse_distance(prefetch_candidate.second, time, false);
             } else {
                 // Find victim in future demand access
@@ -351,7 +352,7 @@ std::pair<uint64_t, uint8_t> O3_CPU::btb_prediction(uint64_t ip, uint8_t branch_
         if (basic_opt.timestamp % RECORD_TIME_GAP == 0 and basic_opt.timestamp_range != RECORD_TIME_GAP) {
             basic_opt.timestamp_range += RECORD_TIME_GAP;
             basic_opt.read_record(btb_record, cpu, twig_prefetch_match);
-            //std::cout<<basic_opt.timestamp_range<<std::endl;
+//            std::cout<<basic_opt.timestamp_range<<std::endl;
         }
         auto btb_entry = basic_opt.find_btb_entry(ip, cpu);
         if (btb_entry == nullptr) {
@@ -460,6 +461,6 @@ void O3_CPU::btb_final_stats() {
          << endl;
 //    access_counter.print_final_stats(cpu);
 //    assert(access_record.btb_type == BTBType::NORMAL);
-    access_record.print_final_stats(trace_name, cpu, twig_prefetch_match != nullptr);
+    access_record.print_final_stats(trace_name, cpu, twig_prefetch_match != nullptr,true);
 //    coverage_accuracy.print_final_stats(trace_name, program_name, BASIC_BTB_WAYS);
 }
