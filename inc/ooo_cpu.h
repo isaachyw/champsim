@@ -94,7 +94,7 @@ public:
     int mispredicted_branch_iw_index = 0; // index in the instruction window of the mispredicted branch.  fetch resumes after the instruction at this index executes
     uint8_t fetch_stall = 0;
     uint64_t fetch_resume_cycle = 0;
-    uint64_t num_branch = 0, branch_mispredictions = 0;
+    uint64_t num_branch = 0, branch_mispredictions = 0,branch_miss_btb=0,branch_miss_fault=0;
     uint64_t total_rob_occupancy_at_branch_mispredict;
 
     unordered_map<uint64_t,uint64_t> stall_record; // branch unique id, stall cycle

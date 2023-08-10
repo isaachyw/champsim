@@ -265,8 +265,7 @@ uint32_t O3_CPU::init_instruction(ooo_model_instr arch_instr) {
                 btb_miss_taken_branch_count++;
             }
         }
-        if( branch_prediction != arch_instr.branch_taken && always_taken == 0)
-        {
+        if (branch_prediction != arch_instr.branch_taken && always_taken == 0) {
             miss_direction++;
         }
         if ((branch_prediction == 0) && (always_taken == 0)) {
@@ -280,13 +279,21 @@ uint32_t O3_CPU::init_instruction(ooo_model_instr arch_instr) {
                                       branch_prediction != 0, always_taken != 0,
                                       arch_instr.branch_target);
 
-        if (predicted_branch_target != arch_instr.branch_target) {
+        if (predicted_branch_target != arch_instr.branch_target
+            || (((arch_instr.branch_type == BRANCH_CONDITIONAL) || (arch_instr.branch_type == BRANCH_OTHER))
+                && arch_instr.branch_taken != branch_prediction)) {
             branch_mispredictions++;
+            if(predicted_branch_target!=arch_instr.branch_target){
+                branch_miss_btb++;
+            }
+            else{
+                branch_miss_fault++;
+            }
             total_rob_occupancy_at_branch_mispredict += ROB.occupancy;
             branch_type_misses[arch_instr.branch_type]++;
             arch_instr.branch_mispredicted_all = 1;
             if (warmup_complete[cpu]) {
-                stall_record[arch_instr.instr_id]=current_core_cycle[cpu];
+                stall_record[arch_instr.instr_id] = current_core_cycle[cpu];
                 fetch_stall = 1;
                 instrs_to_read_this_cycle = 0;
                 arch_instr.branch_mispredicted = BRANCH_MISPREDICT_PENALTY;
@@ -549,8 +556,8 @@ void O3_CPU::decode_instruction() {
                 fetch_resume_cycle = current_core_cycle[cpu] + BRANCH_MISPREDICT_PENALTY;
                 auto it = stall_record.find(db_entry.instr_id);
                 assert(it != stall_record.end());
-                uint64_t diff = fetch_resume_cycle-it->second;
-                stall_cycle+=diff;
+                uint64_t diff = fetch_resume_cycle - it->second;
+                stall_cycle += diff;
                 stall_record.erase(it);
             }
         }
@@ -1508,8 +1515,8 @@ uint32_t O3_CPU::complete_execution(uint32_t rob_index) {
                 fetch_resume_cycle = current_core_cycle[cpu] + BRANCH_MISPREDICT_PENALTY;
                 auto it = stall_record.find(id);
                 assert(it != stall_record.end());
-                uint64_t diff = fetch_resume_cycle-it->second;
-                stall_cycle+=diff;
+                uint64_t diff = fetch_resume_cycle - it->second;
+                stall_cycle += diff;
                 stall_record.erase(it);
             }
 
@@ -1553,8 +1560,8 @@ uint32_t O3_CPU::complete_execution(uint32_t rob_index) {
                     fetch_resume_cycle = current_core_cycle[cpu] + BRANCH_MISPREDICT_PENALTY;
                     auto it = stall_record.find(id);
                     assert(it != stall_record.end());
-                    uint64_t diff = fetch_resume_cycle-it->second;
-                    stall_cycle+=diff;
+                    uint64_t diff = fetch_resume_cycle - it->second;
+                    stall_cycle += diff;
                     stall_record.erase(it);
                 }
 

@@ -131,7 +131,11 @@ void print_sim_stats(uint32_t cpu, CACHE *cache) {
 void print_branch_stats() {
     for (uint32_t i = 0; i < NUM_CPUS; i++) {
         cout << endl << "CPU " << i << " Branch Prediction Accuracy: ";
-        cout << (100.0 * (ooo_cpu[i].num_branch - ooo_cpu[i].branch_mispredictions)) / ooo_cpu[i].num_branch;
+        cout << (100.0 * (ooo_cpu[i].num_branch - ooo_cpu[i].branch_mispredictions)) / ooo_cpu[i].num_branch<<endl;
+        cout <<"branch mispredictions due to btb\n";
+        cout << ooo_cpu[i].branch_miss_btb<<","<<ooo_cpu[i].num_branch<<","<<(100.0*ooo_cpu[i].branch_miss_btb/ooo_cpu[i].num_branch)<<endl;
+        cout <<"branch mispredictions due to predictor\n";
+        cout << ooo_cpu[i].branch_miss_fault<<","<<ooo_cpu[i].num_branch<<","<<(100.0*ooo_cpu[i].branch_miss_fault/ooo_cpu[i].num_branch)<<endl;
         cout << "% MPKI: "
              << (1000.0 * ooo_cpu[i].branch_mispredictions) / (ooo_cpu[i].num_retired - ooo_cpu[i].warmup_instructions);
         cout << " Average ROB Occupancy at Mispredict: "
@@ -261,7 +265,7 @@ void finish_warmup() {
 
         // reset branch stats
         ooo_cpu[i].num_branch = 0;
-        ooo_cpu[i].branch_mispredictions = 0;
+        ooo_cpu[i].branch_mispredictions = ooo_cpu[i].branch_miss_btb=ooo_cpu[i].branch_miss_fault=0;
         ooo_cpu[i].total_rob_occupancy_at_branch_mispredict = 0;
 
         for (uint32_t j = 0; j < 8; j++) {
