@@ -8,7 +8,6 @@ btb_shotgun_prefetch_record
 correct_fdip_result/ipc1_fdip_opt_shotgun_generate_result/
 try
 old_incorrect_fdip_result
-inc/champsim_constants.h
 #src/core_inst.cc
 .champsimconfig_cache
 Makefile
