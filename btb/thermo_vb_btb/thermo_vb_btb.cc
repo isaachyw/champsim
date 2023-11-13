@@ -681,7 +681,8 @@ public:
       if (victim_ip == ip)
         return;
       auto repl_entry = btb[cpu][set].find(victim_ip);
-      victim_buffer.add_to_victim_buffer(&(repl_entry->second));
+      if (judge_hot_warm_cold(victim_ip) == CacheType::COLD)
+        victim_buffer.add_to_victim_buffer(&(repl_entry->second));
       btb[cpu][set].erase(victim_ip);
       //            access_counter.evict(victim_ip, cpu);
     }
@@ -898,10 +899,11 @@ O3_CPU::btb_prediction(uint64_t ip, uint8_t branch_type, uint64_t *latency) {
       return std::make_pair(stream_buffer.stream_buffer_predict(ip), true);
     }
 
-    if (!find_from_victim_buffer) {
-      // update the LRU
-      hot_warm_cold_btb.update_lru(ip, cpu);
-    }
+    // if (find_from_victim_buffer) {
+    //   // update the LRU
+    //   cout << "loc1" << endl;
+    //   hot_warm_cold_btb.update_lru(ip, cpu);
+    // }
 
     return std::make_pair(btb_entry->target, btb_entry->always_taken);
   }
@@ -964,7 +966,7 @@ void O3_CPU::update_btb(uint64_t ip, uint64_t branch_target, uint8_t taken,
         btb_entry->target = branch_target;
       }
       btb_entry->add_to_taken_history(taken != 0);
-      hot_warm_cold_btb.update_lru(ip, cpu);
+      // hot_warm_cold_btb.update_lru(ip, cpu);
       //            access_counter.access(ip, cpu);
     }
   }
@@ -977,8 +979,12 @@ void O3_CPU::prefetch_btb(uint64_t ip, uint64_t branch_target,
   // branch may change later
   if (branch_type != BRANCH_RETURN && branch_type != BRANCH_INDIRECT &&
       branch_type != BRANCH_INDIRECT_CALL) {
+    auto find_from_victim_buffer = false;
     auto btb_entry = hot_warm_cold_btb.find_btb_entry(ip, cpu);
-
+    if (btb_entry == nullptr) {
+      btb_entry = victim_buffer.find_entry(ip);
+      find_from_victim_buffer = true;
+    }
     if (btb_entry == NULL) {
       if ((branch_target != 0) && taken) {
         if (to_stream_buffer) {
@@ -989,6 +995,10 @@ void O3_CPU::prefetch_btb(uint64_t ip, uint64_t branch_target,
         }
       }
     } else {
+      if (!find_from_victim_buffer) {
+        cout << "loc2\n";
+        hot_warm_cold_btb.update_lru(ip, cpu);
+      }
       // TODO: Consider whether to update taken history here. Currently not
       // consider this part.
       if (taken_only) {
@@ -1003,7 +1013,7 @@ void O3_CPU::prefetch_btb(uint64_t ip, uint64_t branch_target,
       } else {
         btb_entry->target = branch_target;
       }
-      hot_warm_cold_btb.update_lru(ip, cpu);
+      // hot_warm_cold_btb.update_lru(ip, cpu);
       //            access_counter.access(ip, cpu);
     }
   }

@@ -48,3 +48,4 @@ delta-build/
 build/
 env/
 *__pycache__/
+.cache/
